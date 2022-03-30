@@ -1,12 +1,15 @@
 package co.com.sofka.app.BibliotecaSpringBoot.Mongo.modelsDto;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Document(collection = "libros")
 public class LibroDto {
 
+    @Id
     private String id;
     private String nombre;
     private String categoria;
@@ -82,5 +85,18 @@ public class LibroDto {
 
     public void setCantidadPrestada(Integer cantidadPrestada) {
         this.cantidadPrestada = cantidadPrestada;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LibroDto libroDto = (LibroDto) o;
+        return Objects.equals(id, libroDto.id) && Objects.equals(nombre, libroDto.nombre) && Objects.equals(categoria, libroDto.categoria) && Objects.equals(tipo, libroDto.tipo) && Objects.equals(fechaPrestado, libroDto.fechaPrestado) && Objects.equals(cantidadDisponible, libroDto.cantidadDisponible) && Objects.equals(cantidadPrestada, libroDto.cantidadPrestada);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, categoria, tipo, fechaPrestado, cantidadDisponible, cantidadPrestada);
     }
 }
