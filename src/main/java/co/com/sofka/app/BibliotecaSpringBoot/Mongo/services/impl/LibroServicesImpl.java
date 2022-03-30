@@ -1,16 +1,18 @@
-package co.com.sofka.app.BibliotecaSpringBoot.Mongo.services;
+package co.com.sofka.app.BibliotecaSpringBoot.Mongo.services.impl;
 
 import co.com.sofka.app.BibliotecaSpringBoot.Mongo.modelsDto.LibroDto;
 import co.com.sofka.app.BibliotecaSpringBoot.Mongo.repositories.ILibrosRepositories;
-import co.com.sofka.app.BibliotecaSpringBoot.Mongo.services.impl.LibroServicesI;
+import co.com.sofka.app.BibliotecaSpringBoot.Mongo.services.LibroServicesI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class LibroServices implements LibroServicesI {
+@Service
+public class LibroServicesImpl implements LibroServicesI {
 
     @Autowired
     private ILibrosRepositories iLibrosRepositories;

@@ -1,4 +1,4 @@
-package co.com.sofka.app.BibliotecaSpringBoot.Mongo.services.impl;
+package co.com.sofka.app.BibliotecaSpringBoot.Mongo.services;
 
 import co.com.sofka.app.BibliotecaSpringBoot.Mongo.modelsDto.LibroDto;
 
